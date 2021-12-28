@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2753E65C25C816E80083B9E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2753E65B25C816E80083B9E5 /* main.m */; };
+		276A95A525DC7414006B723E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 276A95A425DC7414006B723E /* AppDelegate.m */; };
+		276A95AA25DC7415006B723E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276A95A925DC7415006B723E /* Assets.xcassets */; };
+		276A95AD25DC7415006B723E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276A95AB25DC7415006B723E /* Main.storyboard */; };
+		276A95B025DC7415006B723E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 276A95AF25DC7415006B723E /* main.m */; };
+		27DE712B277BAE0D00D0DFE0 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27DE712A277BAE0D00D0DFE0 /* IOKit.framework */; platformFilter = maccatalyst; };
+		27DE712F277BB9F900D0DFE0 /* M1Wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE712E277BB9F900D0DFE0 /* M1Wrapper.m */; };
+		27DE7130277BB9F900D0DFE0 /* M1Wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE712E277BB9F900D0DFE0 /* M1Wrapper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2753E65625C816E80083B9E5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2753E65825C816E80083B9E5 /* ConsoleThermals */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ConsoleThermals; sourceTree = BUILT_PRODUCTS_DIR; };
+		2753E65B25C816E80083B9E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		276A95A125DC7414006B723E /* SystemThermals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SystemThermals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		276A95A325DC7414006B723E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		276A95A425DC7414006B723E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		276A95A925DC7415006B723E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		276A95AC25DC7415006B723E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		276A95AE25DC7415006B723E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		276A95AF25DC7415006B723E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		276A95B125DC7415006B723E /* SystemThermals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SystemThermals.entitlements; sourceTree = "<group>"; };
+		27DE712A277BAE0D00D0DFE0 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		27DE712C277BAE1800D0DFE0 /* libswiftIOKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftIOKit.tbd; path = usr/lib/swift/libswiftIOKit.tbd; sourceTree = SDKROOT; };
+		27DE712E277BB9F900D0DFE0 /* M1Wrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M1Wrapper.m; sourceTree = "<group>"; };
+		27DE7131277BBA1500D0DFE0 /* M1Wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M1Wrapper.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2753E65525C816E80083B9E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27DE712B277BAE0D00D0DFE0 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		276A959E25DC7414006B723E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2707F4B325DC880B00DA4150 /* wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				27DE712E277BB9F900D0DFE0 /* M1Wrapper.m */,
+				27DE7131277BBA1500D0DFE0 /* M1Wrapper.h */,
+			);
+			path = wrappers;
+			sourceTree = "<group>";
+		};
+		2753E64F25C816E80083B9E5 = {
+			isa = PBXGroup;
+			children = (
+				2707F4B325DC880B00DA4150 /* wrappers */,
+				2753E65A25C816E80083B9E5 /* ConsoleThermals */,
+				276A95A225DC7414006B723E /* SystemThermals */,
+				2753E65925C816E80083B9E5 /* Products */,
+				27DE7129277BAE0D00D0DFE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2753E65925C816E80083B9E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2753E65825C816E80083B9E5 /* ConsoleThermals */,
+				276A95A125DC7414006B723E /* SystemThermals.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2753E65A25C816E80083B9E5 /* ConsoleThermals */ = {
+			isa = PBXGroup;
+			children = (
+				2753E65B25C816E80083B9E5 /* main.m */,
+			);
+			path = ConsoleThermals;
+			sourceTree = "<group>";
+		};
+		276A95A225DC7414006B723E /* SystemThermals */ = {
+			isa = PBXGroup;
+			children = (
+				276A95A325DC7414006B723E /* AppDelegate.h */,
+				276A95A425DC7414006B723E /* AppDelegate.m */,
+				276A95A925DC7415006B723E /* Assets.xcassets */,
+				276A95AB25DC7415006B723E /* Main.storyboard */,
+				276A95AE25DC7415006B723E /* Info.plist */,
+				276A95AF25DC7415006B723E /* main.m */,
+				276A95B125DC7415006B723E /* SystemThermals.entitlements */,
+			);
+			path = SystemThermals;
+			sourceTree = "<group>";
+		};
+		27DE7129277BAE0D00D0DFE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27DE712C277BAE1800D0DFE0 /* libswiftIOKit.tbd */,
+				27DE712A277BAE0D00D0DFE0 /* IOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2753E65725C816E80083B9E5 /* ConsoleThermals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2753E65F25C816E80083B9E5 /* Build configuration list for PBXNativeTarget "ConsoleThermals" */;
+			buildPhases = (
+				2753E65425C816E80083B9E5 /* Sources */,
+				2753E65525C816E80083B9E5 /* Frameworks */,
+				2753E65625C816E80083B9E5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConsoleThermals;
+			productName = thermals;
+			productReference = 2753E65825C816E80083B9E5 /* ConsoleThermals */;
+			productType = "com.apple.product-type.tool";
+		};
+		276A95A025DC7414006B723E /* SystemThermals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 276A95B425DC7415006B723E /* Build configuration list for PBXNativeTarget "SystemThermals" */;
+			buildPhases = (
+				276A959D25DC7414006B723E /* Sources */,
+				276A959E25DC7414006B723E /* Frameworks */,
+				276A959F25DC7414006B723E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SystemThermals;
+			productName = SystemThermals;
+			productReference = 276A95A125DC7414006B723E /* SystemThermals.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2753E65025C816E80083B9E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				ORGANIZATIONNAME = "Apollo SOFTWARE";
+				TargetAttributes = {
+					2753E65725C816E80083B9E5 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					276A95A025DC7414006B723E = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 2753E65325C816E80083B9E5 /* Build configuration list for PBXProject "SystemThermals" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2753E64F25C816E80083B9E5;
+			productRefGroup = 2753E65925C816E80083B9E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2753E65725C816E80083B9E5 /* ConsoleThermals */,
+				276A95A025DC7414006B723E /* SystemThermals */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		276A959F25DC7414006B723E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276A95AA25DC7415006B723E /* Assets.xcassets in Resources */,
+				276A95AD25DC7415006B723E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2753E65425C816E80083B9E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27DE712F277BB9F900D0DFE0 /* M1Wrapper.m in Sources */,
+				2753E65C25C816E80083B9E5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		276A959D25DC7414006B723E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27DE7130277BB9F900D0DFE0 /* M1Wrapper.m in Sources */,
+				276A95B025DC7415006B723E /* main.m in Sources */,
+				276A95A525DC7414006B723E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		276A95AB25DC7415006B723E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				276A95AC25DC7415006B723E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2753E65D25C816E80083B9E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2753E65E25C816E80083B9E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2753E66025C816E80083B9E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJZPS3J9JV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2753E66125C816E80083B9E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJZPS3J9JV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		276A95B225DC7415006B723E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SystemThermals/SystemThermals.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SJZPS3J9JV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = SystemThermals/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.apolloss.SystemThermals;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		276A95B325DC7415006B723E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SystemThermals/SystemThermals.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SJZPS3J9JV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = SystemThermals/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.apolloss.SystemThermals;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2753E65325C816E80083B9E5 /* Build configuration list for PBXProject "SystemThermals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2753E65D25C816E80083B9E5 /* Debug */,
+				2753E65E25C816E80083B9E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2753E65F25C816E80083B9E5 /* Build configuration list for PBXNativeTarget "ConsoleThermals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2753E66025C816E80083B9E5 /* Debug */,
+				2753E66125C816E80083B9E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		276A95B425DC7415006B723E /* Build configuration list for PBXNativeTarget "SystemThermals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276A95B225DC7415006B723E /* Debug */,
+				276A95B325DC7415006B723E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2753E65025C816E80083B9E5 /* Project object */;
+}
