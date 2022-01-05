@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "M1Wrapper.h"
 
+int UNIT = CELC;
+
 @implementation M1Wrapper
 
 // Shared Instance (Singleton)
@@ -103,22 +105,27 @@ float get_temperature_float(CFArrayRef values) {
     return 0.0f;
 }
 
+
 -(float ) get_temp_float {
-    CFDictionaryRef thermalSensors = match(0xff00, 5);
+    CFDictionaryRef thermalSensors = match(SENSOR, 5);
     CFArrayRef thermalValues = getThermalValues(thermalSensors);
     return get_temperature_float(thermalValues);
 }
 
 - (NSString *) get_temp_values {
-    CFDictionaryRef thermalSensors = match(0xff00, 5);
+    CFDictionaryRef thermalSensors = match(SENSOR, 5);
     CFArrayRef thermalValues = getThermalValues(thermalSensors);
     NSLog(@"\n\n\tCPU Core 0 Temp:\n\t%@",get_temperature(thermalValues));
+    if (UNIT == KELV)
+        return [NSString stringWithFormat:@"%.01f°K", (get_temperature_float(thermalValues) + 273.15f)];
+    if (UNIT == FAREN)
+        return [NSString stringWithFormat:@"%.01f°F", ((get_temperature_float(thermalValues) * 9/5) + 32.0f)];
     return get_temperature(thermalValues);
 }
 
 -(BOOL) m1Open
 {
-    CFDictionaryRef thermalSensors = match(0xff00, 5);
+    CFDictionaryRef thermalSensors = match(SENSOR, 5);
     CFArrayRef thermalValues = getThermalValues(thermalSensors);
     if (thermalValues)
     {

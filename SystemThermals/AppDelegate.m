@@ -70,12 +70,33 @@
     [self performSelector:@selector(mainthread_dotask) withObject:nil afterDelay:DELAY_T];
 }
 
+int t_UNIT = NONE;
+
+- (float) get_temp_var {
+
+    if (t_UNIT == KELV)
+        return [self get_cpu_temp] + 273.15f;
+    if (t_UNIT == FAREN)
+        return ([self get_cpu_temp] * 9.0f/5.0f) + 32.0f;
+    return [self get_cpu_temp];
+}
+
+- (NSString *) get_temp_label {
+
+    if (t_UNIT == KELV)
+        return @"K";
+    if (t_UNIT == FAREN)
+        return @"F";
+    if (t_UNIT == NONE)
+        return @"";
+    return @"C";
+}
 
 - (void) update_temp
 {
     NSDictionary *titleAttributes = [NSDictionary dictionaryWithObject:[self get_temp_colour] forKey:NSForegroundColorAttributeName];
-    
-    NSAttributedString* colouredTitle = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.1f°",[self get_cpu_temp]] attributes:titleAttributes];
+
+    NSAttributedString* colouredTitle = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.1f°%@",[self get_temp_var],[self get_temp_label]] attributes:titleAttributes];
 
     _statusItem.button.attributedTitle = colouredTitle;
 }

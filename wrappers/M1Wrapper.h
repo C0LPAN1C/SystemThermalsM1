@@ -28,6 +28,11 @@ typedef float IOHIDFloat;
 
 #define IOHIDEventFieldBase(type)   (type << 16)
 #define kIOHIDEventTypeTemperature  15
+#define SENSOR  0xff00
+#define CELC    0x0000
+#define FAREN   0x0001
+#define KELV    0x0010
+#define NONE    0x0011
 
 IOHIDEventSystemClientRef IOHIDEventSystemClientCreate(CFAllocatorRef allocator);
 int IOHIDEventSystemClientSetMatching(IOHIDEventSystemClientRef client, CFDictionaryRef match);
