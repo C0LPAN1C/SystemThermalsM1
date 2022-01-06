@@ -29,6 +29,7 @@ typedef float IOHIDFloat;
 #define IOHIDEventFieldBase(type)   (type << 16)
 #define kIOHIDEventTypeTemperature  15
 #define SENSOR  0xff00
+
 #define CELC    0x0000
 #define FAREN   0x0001
 #define KELV    0x0010
@@ -42,6 +43,8 @@ IOHIDFloat IOHIDEventGetFloatValue(IOHIDEventRef event, int32_t field);
 
 - (NSString *) get_temp_values;
 - (float) get_temp_float;
+- (BOOL) m1Open;
+- (void) m1Close;
 
 @end
 

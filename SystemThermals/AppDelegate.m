@@ -6,22 +6,34 @@
 //
 
 #import "AppDelegate.h"
-#import "M1Wrapper.h"
+
 
 @interface AppDelegate ()
-
-
+@property (strong, nonatomic) M1Wrapper *m1smc;
 @end
 
 @implementation AppDelegate
 
+int t_UNIT = CELC;
 
-- (NSColor *) get_temp_colour
+
+-(id)init
+{
+    self = [super init];
+    if(self)
+    {
+        _m1smc = [M1Wrapper sharedWrapper];
+        t_UNIT = CELC;
+    }
+
+    return self;
+}
+
+- (NSColor *) get_temp_colour:(float) t
 {
     NSColor *tempColour = [NSColor textColor];
-    float t = [self get_cpu_temp];
     
-    if (t < TJ_MID)
+    if (t < TJ_WARN1)
     {
         tempColour = [NSColor greenColor];
     }
@@ -43,25 +55,80 @@
 
 - (NSString *) get_cpu_temperature
 {
-    M1Wrapper *m1smc = [M1Wrapper sharedWrapper];
-    return [m1smc get_temp_values];
+    return [_m1smc get_temp_values];
 }
 
 - (float) get_cpu_temp
 {
-    M1Wrapper *m1smc = [M1Wrapper sharedWrapper];
-    return [m1smc get_temp_float];
+    return [_m1smc get_temp_float];
+}
+
+-(void) open
+{
+    
+}
+
+- (void)showMenu {
+ 
+    NSMenuItem* menuBarItem = [[NSMenuItem alloc]
+                            initWithTitle:@"Custom" action:NULL keyEquivalent:@""];
+    // title localization is omitted for compactness
+    _menu = [[NSMenu alloc] initWithTitle:@"Custom"];
+    [menuBarItem setSubmenu:_menu];
+    [[NSApp mainMenu] insertItem:menuBarItem atIndex:3];
+}
+
+- (void)exitApp{
+    NSLog(@"Quitting App");
+    exit(0);
+}
+
+- (void)selectUnit{
+    NSLog(@"selecUnit");
+    if (t_UNIT == NONE)
+        t_UNIT = CELC;
+    else if (t_UNIT == FAREN)
+        t_UNIT = KELV;
+    else if (t_UNIT == KELV)
+        t_UNIT = NONE;
+    else if (t_UNIT == CELC)
+        t_UNIT = FAREN;
+    [self update_temp];
+}
+
+-(void)buttonClick:(id)sender {
+    NSEvent* event;
+
+    event = [NSEvent mouseEventWithType:NSEventTypeLeftMouseDown
+                               location:[NSEvent mouseLocation]
+                             modifierFlags:[event modifierFlags]
+                                 timestamp:CFAbsoluteTimeGetCurrent()
+                              windowNumber:[event windowNumber]
+                                   context:nil
+                               eventNumber:[event eventNumber]
+                                clickCount:[event clickCount]
+                                  pressure:[event pressure]];
+    
+    [NSMenu popUpContextMenu:_menu withEvent:event forView:(NSButton *)sender];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [NSApp setActivationPolicy: NSApplicationActivationPolicyProhibited];
     _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    
+    _menu = [NSApp mainMenu];
+    _statusItem.button.action = @selector(buttonClick:);
+    _statusItem.button.target = self;
+    _statusBar = [NSStatusBar systemStatusBar];
+
+    [_statusBar statusItemWithLength:3];
     // The text that will be shown in the menu bar
     [self update_temp];
     
     [self performSelector:@selector(mainthread_dotask) withObject:nil afterDelay:DELAY_T];
     
+}
+- (IBAction)selectUnit:(id)sender {
+    [self selectUnit];
 }
 
 - (void) mainthread_dotask
@@ -70,15 +137,13 @@
     [self performSelector:@selector(mainthread_dotask) withObject:nil afterDelay:DELAY_T];
 }
 
-int t_UNIT = NONE;
+- (float) get_temp_var:(float) t {
 
-- (float) get_temp_var {
-
+    if (t_UNIT == CELC)
+        return t;
     if (t_UNIT == KELV)
-        return [self get_cpu_temp] + 273.15f;
-    if (t_UNIT == FAREN)
-        return ([self get_cpu_temp] * 9.0f/5.0f) + 32.0f;
-    return [self get_cpu_temp];
+        return t + 273.15f;
+    return (t * 9.0f/5.0f) + 32.0f; //default
 }
 
 - (NSString *) get_temp_label {
@@ -94,15 +159,16 @@ int t_UNIT = NONE;
 
 - (void) update_temp
 {
-    NSDictionary *titleAttributes = [NSDictionary dictionaryWithObject:[self get_temp_colour] forKey:NSForegroundColorAttributeName];
+    float t = [self get_cpu_temp];
+    NSDictionary *titleAttributes = [NSDictionary dictionaryWithObject:[self get_temp_colour:t] forKey:NSForegroundColorAttributeName];
 
-    NSAttributedString* colouredTitle = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.1f°%@",[self get_temp_var],[self get_temp_label]] attributes:titleAttributes];
+    NSAttributedString* colouredTitle = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.1f°%@",[self get_temp_var:t],[self get_temp_label]] attributes:titleAttributes];
 
     _statusItem.button.attributedTitle = colouredTitle;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+    [_m1smc m1Close];
 }
 
 

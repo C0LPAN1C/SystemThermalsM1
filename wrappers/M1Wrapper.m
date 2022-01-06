@@ -130,13 +130,17 @@ float get_temperature_float(CFArrayRef values) {
     if (thermalValues)
     {
         CFRelease(thermalValues);
+        NSLog(@"Opening M1 SMC.");
         return true;
     } else return false;
 }
 
 
 -(void) m1Close
-{}
+{
+    sharedInstance = nil;
+    NSLog(@"Close M1 SMC.");
+}
 
 #pragma mark Init and Dealloc
 
