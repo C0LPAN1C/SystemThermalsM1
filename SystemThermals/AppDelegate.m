@@ -83,6 +83,25 @@ int t_UNIT = CELC;
     exit(0);
 }
 
+- (IBAction)selectDefault:(id)sender {
+    [self selectUnit:NONE];
+}
+- (IBAction)selectCelcius:(id)sender {
+    [self selectUnit:CELC];
+}
+- (IBAction)selectFahrenheit:(id)sender {
+    [self selectUnit:FAREN];
+}
+- (IBAction)selectKelvin:(id)sender {
+    [self selectUnit:KELV];
+}
+
+- (void)selectUnit:(int) unit{
+    NSLog(@"selecUnit");
+    t_UNIT = unit;
+    [self update_temp];
+}
+
 - (void)selectUnit{
     NSLog(@"selecUnit");
     if (t_UNIT == NONE)
@@ -126,9 +145,6 @@ int t_UNIT = CELC;
     
     [self performSelector:@selector(mainthread_dotask) withObject:nil afterDelay:DELAY_T];
     
-}
-- (IBAction)selectUnit:(id)sender {
-    [self selectUnit];
 }
 
 - (void) mainthread_dotask

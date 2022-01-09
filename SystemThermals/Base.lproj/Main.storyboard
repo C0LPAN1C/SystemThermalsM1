@@ -14,13 +14,29 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Menu" id="1Xt-HY-uBw">
+                            <menuItem title="System Thermals" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Menu" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="System Thermals" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="Change Unit…" keyEquivalent="," id="BOF-NM-1cW">
+                                        <menuItem title="[default]" keyEquivalent="d" id="IMm-7c-AiF" userLabel="[default]">
                                             <connections>
-                                                <action selector="selectUnit:" target="Voe-Tx-rLC" id="FaH-gf-zCn"/>
+                                                <action selector="selectDefault:" target="Voe-Tx-rLC" id="4zV-Yp-1Eg"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="DtF-9a-zOw"/>
+                                        <menuItem title="Celcius" keyEquivalent="c" id="rln-pW-uzU" userLabel="Celcius">
+                                            <connections>
+                                                <action selector="selectCelcius:" target="Voe-Tx-rLC" id="O78-PD-UIG"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Fahrenheit" keyEquivalent="f" id="YsC-Bm-Ddw" userLabel="Fahrenheit">
+                                            <connections>
+                                                <action selector="selectFahrenheit:" target="Voe-Tx-rLC" id="KLN-Lg-DVL"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Kelvin" keyEquivalent="k" id="NUU-Ic-ok1" userLabel="Kelvin">
+                                            <connections>
+                                                <action selector="selectKelvin:" target="Voe-Tx-rLC" id="FEd-v1-aCn"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
