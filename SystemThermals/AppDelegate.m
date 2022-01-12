@@ -29,6 +29,11 @@ int t_UNIT = CELC;
     return self;
 }
 
+- (void)dealloc
+{
+    [_m1smc m1Close];
+}
+
 - (NSColor *) get_temp_colour:(float) t
 {
     NSColor *tempColour = [NSColor textColor];
@@ -80,7 +85,7 @@ int t_UNIT = CELC;
 
 - (void)exitApp{
     NSLog(@"Quitting App");
-    exit(0);
+    [[NSApplication sharedApplication] terminate:self];
 }
 
 - (IBAction)selectDefault:(id)sender {

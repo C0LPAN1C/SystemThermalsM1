@@ -53,6 +53,7 @@ CFArrayRef getProductNames(CFDictionaryRef sensors) {
             CFArrayAppendValue(array, @"noname");
         }
     }
+    CFRelease(matchingsrvs);
     return array;
 }
 
@@ -77,6 +78,7 @@ CFArrayRef getThermalValues(CFDictionaryRef sensors) {
         }
         CFArrayAppendValue(array, value);
     }
+    CFRelease(matchingsrvs);
     return array;
 }
 
@@ -88,6 +90,7 @@ NSString *get_temperature(CFArrayRef values)
         CFNumberRef value = CFArrayGetValueAtIndex(values, 1);
         double temp = 0.0;
         CFNumberGetValue(value, kCFNumberDoubleType, &temp);
+        CFRelease(values);
         return [NSString stringWithFormat:@"%.01f°C", temp];
     }
     else return @"0.0°C";
@@ -100,6 +103,7 @@ float get_temperature_float(CFArrayRef values) {
         CFNumberRef value = CFArrayGetValueAtIndex(values, 1);
         double temp = 0.0;
         CFNumberGetValue(value, kCFNumberDoubleType, &temp);
+        CFRelease(values);
         return temp;
     }
     return 0.0f;
